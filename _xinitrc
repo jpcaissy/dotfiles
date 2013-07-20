@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+xscreensaver -no-splash &
+redshift -l 45.5:-73.66667 &
+setxkbmap -layout "us,ca" -option "grp:alt_shift_toggle"
+wmname LG3D
+
+while true; do
+    load="`cat /proc/loadavg | awk '{print $1, $2, $3}'`"
+    ram="`free -m |awk '/cache:/ { print $4"M" }'`"
+    volume="`amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/'`"
+    xsetroot -name "`acpi` | `~/dotfiles/cpu-current-freq.sh` MHz | $ram | $load | $volume | $(date +%r\ %F) "
+
+    sleep 5 
+done &
+exec /usr/local/bin/dwm
+synclient TouchpadOff=1
