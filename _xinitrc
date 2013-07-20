@@ -4,6 +4,7 @@ xscreensaver -no-splash &
 redshift -l 45.5:-73.66667 &
 setxkbmap -layout "us,ca" -option "grp:alt_shift_toggle"
 wmname LG3D
+synclient TouchpadOff=1
 
 while true; do
     load="`cat /proc/loadavg | awk '{print $1, $2, $3}'`"
@@ -14,4 +15,3 @@ while true; do
     sleep 5 
 done &
 exec /usr/local/bin/dwm
-synclient TouchpadOff=1
