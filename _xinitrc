@@ -5,6 +5,7 @@ redshift -l 45.5:-73.66667 &
 setxkbmap -layout "us,ca" -option "grp:alt_shift_toggle"
 wmname LG3D
 synclient TouchpadOff=1
+unison -silent encbox >> ~/.unison.log 2>&1 &
 
 while true; do
     load="`cat /proc/loadavg | awk '{print $1, $2, $3}'`"
