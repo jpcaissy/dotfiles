@@ -116,3 +116,5 @@ set -o vi
 alias \:wq="cowsay \"This ain't vim\""
 alias \:w="cowsay \"This ain't vim\""
 alias \:q="cowsay \"This ain't vim\""
+
+export TERM=xterm-256color
