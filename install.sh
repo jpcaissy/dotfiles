@@ -2,25 +2,25 @@
 
 set -x
 
-if [ -f ../.bashrc ]
+if [ -f $HOME/.bashrc ]
 then
-    mv ../.bashrc ../.bashrc.bak
+    mv $HOME/.bashrc $HOME/.bashrc.bak
 fi
-if [ -f ../.git-prompt.sh ]
+if [ -f $HOME/.git-prompt.sh ]
 then
-    mv ../.git-prompt.sh ../.git-prompt.sh.bak
+    mv $HOME/.git-prompt.sh $HOME/.git-prompt.sh.bak
 fi
-if [ -f ../.xinitrc ]
+if [ -f $HOME/.xinitrc ]
 then
-    mv ../.xinitrc ../.xinitrc.bak
+    mv $HOME/.xinitrc $HOME/.xinitrc.bak
 fi
-if [ -f ../.tmux.conf ]
+if [ -f $HOME/.tmux.conf ]
 then
-    mv ../.tmux.conf ../.tmux.conf.bak
+    mv $HOME/.tmux.conf $HOME/.tmux.conf.bak
 fi
 
-ln _bashrc ../.bashrc
-ln _git-prompt.sh ../.git-prompt.sh
-ln _xinitrc ../.xinitrc
-ln _xinitrc ../.Xsession
-ln _tmux.conf ../.tmux.conf
+ln _bashrc $HOME/.bashrc
+ln _git-prompt.sh $HOME/.git-prompt.sh
+ln _xinitrc $HOME/.xinitrc
+ln _xinitrc $HOME/.Xsession
+ln _tmux.conf $HOME/.tmux.conf
