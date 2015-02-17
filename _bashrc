@@ -119,3 +119,6 @@ alias \:q="cowsay \"This ain't vim\""
 
 export MOZBUILD_STATE_PATH=~/src/mozilla-central/.mozbuild
 export TERM=xterm-256color
+
+export GOROOT=/home/jp/src/go
+export PATH=/home/jp/src/go/bin:$PATH:/home/jp/src/nit/bin
