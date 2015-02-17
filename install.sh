@@ -23,4 +23,5 @@ ln _bashrc $HOME/.bashrc
 ln _git-prompt.sh $HOME/.git-prompt.sh
 ln _xinitrc $HOME/.xinitrc
 ln _xinitrc $HOME/.Xsession
+ln _inputrc $HOME/.inputrc
 ln _tmux.conf $HOME/.tmux.conf
