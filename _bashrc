@@ -1,6 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
+if [[ -f ~/.bash_profile ]]; then source ~/.bash_profile; fi
 
 # If not running interactively, don't do anything
 case $- in
@@ -120,5 +121,7 @@ alias \:q="cowsay \"This ain't vim\""
 export MOZBUILD_STATE_PATH=~/src/mozilla-central/.mozbuild
 export TERM=xterm-256color
 
-export GOROOT=/home/jp/src/go
-export PATH=/home/jp/src/go/bin:$PATH:/home/jp/src/nit/bin
+export GOPATH=~/src
+export PATH=~/src/bin:$PATH:/home/jp/src/nit/bin
+
+export PATH="$HOME/.yarn/bin:$PATH"
