@@ -1,7 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-if [[ -f ~/.bash_profile ]]; then source ~/.bash_profile; fi
 
 # If not running interactively, don't do anything
 case $- in
@@ -85,6 +84,8 @@ if [ -x /usr/bin/dircolors ]; then
     #alias grep='grep --color=auto'
     #alias fgrep='fgrep --color=auto'
     #alias egrep='egrep --color=auto'
+else
+    alias ls='ls -aG'
 fi
 
 # some more ls aliases
@@ -122,6 +123,12 @@ export MOZBUILD_STATE_PATH=~/src/mozilla-central/.mozbuild
 export TERM=xterm-256color
 
 export GOPATH=~/src
-export PATH=~/src/bin:$PATH:/home/jp/src/nit/bin
+export PATH=~/src/bin:$PATH
+source /Users/jpcaissy/src/nit/misc/nit_env.sh
 
 export PATH="$HOME/.yarn/bin:$PATH"
+
+# load dev, but only if present and the shell is interactive
+if [[ -f /opt/dev/dev.sh ]] && [[ $- == *i* ]]; then
+  source /opt/dev/dev.sh
+fi
