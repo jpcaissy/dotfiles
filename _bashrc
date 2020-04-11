@@ -8,16 +8,12 @@ case $- in
       *) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-shopt -s histappend
+export HISTCONTROL=ignoredups:erasedups  # no duplicate entries
+shopt -s histappend                      # append to history, don't overwrite it
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=100000
-HISTFILESIZE=200000
+export HISTSIZE=100000
+export HISTFILESIZE=200000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -122,13 +118,9 @@ alias \:q="cowsay \"This ain't vim\""
 export MOZBUILD_STATE_PATH=~/src/mozilla-central/.mozbuild
 export TERM=xterm-256color
 
-export GOPATH=~/src
+export GOPATH=~/go
 export PATH=~/src/bin:$PATH
-source /Users/jpcaissy/src/nit/misc/nit_env.sh
+source ~/.git-prompt.sh
+#source /Users/jpcaissy/src/nit/misc/nit_env.sh
 
-export PATH="$HOME/.yarn/bin:$PATH"
-
-# load dev, but only if present and the shell is interactive
-if [[ -f /opt/dev/dev.sh ]] && [[ $- == *i* ]]; then
-  source /opt/dev/dev.sh
-fi
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
